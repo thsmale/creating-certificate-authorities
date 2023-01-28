@@ -1,0 +1,15 @@
+*
+*index
+*serial
+*newcerts
+*.pfx
+*.pem 
+*.key 
+*.cer
+*.crt 
+*.cert
+!.gitignore
+!root/openssl.cnf
+!intermediate/openssl.cnf
+!.script.sh
+!README.md
