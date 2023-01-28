@@ -11,5 +11,5 @@
 !.gitignore
 !root/openssl.cnf
 !intermediate/openssl.cnf
-!.script.sh
+!script.sh
 !README.md
