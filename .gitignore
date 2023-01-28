@@ -9,6 +9,8 @@
 *.crt 
 *.cert
 !.gitignore
+!root
+!intermediate
 !root/openssl.cnf
 !intermediate/openssl.cnf
 !script.sh
