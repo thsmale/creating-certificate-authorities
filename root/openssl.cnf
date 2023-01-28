@@ -76,7 +76,7 @@ localityName_default            = Palo Alto
 0.organizationName_default      = Tommy
 organizationalUnitName_default  = IF
 commonName_default              = root
-emailAddress_default            = thomas.smale@hpe.com
+emailAddress_default            = 
 
 [ v3_ca ]
 # Extensions for a typical CA (`man x509v3_config`).
