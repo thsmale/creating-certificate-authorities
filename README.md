@@ -1,4 +1,25 @@
 # Create your own CA
+
+## TLDR;
+```sh
+openssl req -nodes -new -x509 -days 1 \
+  -keyout ca-key.pem \
+  -subj "/C/US/ST=California/L=Palo Alto/O=Tommy/OU=IF/CN=ca" \
+  -out ca.crt
+  
+openssl genrsa -out server.key
+
+openssl req -new -key server.key \
+  -subj = "/C=US/ST=California/L=Palo Alto/O=Tommy/OU=IF/CN=localhost"\
+  -out server-csr.pem
+ 
+openssl x509 -req -days 1 -in server-csr.pem \
+  -CA test/ssl/ca.crt -CAkey ca-key.pem \
+  -CAcreateserial -out server.crt
+
+openssl verify -CAfile ca.crt server.crt
+```
+
 This is script to create your own certificate authority and chain. This has been used to generate test certificates for a nodejs server. It was used to test @hapi/Wreck HTTPS requests against a fake TLS server.
 
 This can also be included in a Jenkinsfile to create certificates dynamically. Shoutout Haley Tortorich of HPE for supplying the -batch and -subj options to disable any prompts.
